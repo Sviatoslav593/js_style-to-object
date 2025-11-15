@@ -15,6 +15,7 @@ function convertToObject(sourceString) {
     .map((item) => item.trim())
     .filter((item) => item.length > 1)
     .map((item) => item.replace(';', ''))
+    .filter((item) => item.includes(':'))
     .reduce((acc, line) => {
       const parts = line.split(':');
       const rawKey = parts[0];
